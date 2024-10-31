@@ -15,7 +15,9 @@ class CalculatorProvider extends ChangeNotifier {
         break;
       case "+/-":
         var num = int.tryParse(compController.text);
-        if(num != null){compController.text = "${(num * -1)}";}
+        if(num != null){
+          compController.text = "${(num * -1)}";
+        }
         break;
       case "x":
         compController.text += "*";
