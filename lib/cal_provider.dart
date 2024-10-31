@@ -8,14 +8,13 @@ class CalculatorProvider extends ChangeNotifier {
   List<String> operators = [];
 
   setValue(String value) {
-    String str = compController.text;
-
     switch (value) {
       case "AC":
         compController.clear();
+
         break;
       case "+/-":
-        var num = int.tryParse(str);
+        var num = int.tryParse(compController.text);
         if(num != null){compController.text = "${(num * -1)}";}
         break;
       case "x":
@@ -25,7 +24,7 @@ class CalculatorProvider extends ChangeNotifier {
         compController.text += "/";
         break;
       case "=":
-        compController.text = compute(str);
+        compController.text = compute(compController.text);
         break;
       default:
         compController.text += value;
