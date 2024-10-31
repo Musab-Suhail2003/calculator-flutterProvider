@@ -23,7 +23,7 @@ class ZeroButton extends StatelessWidget {
           child: const Text(
             "    0",
             style: TextStyle(
-              fontSize: 32, fontWeight: FontWeight.w600
+              fontSize: 38,
             ),
           ),
         )

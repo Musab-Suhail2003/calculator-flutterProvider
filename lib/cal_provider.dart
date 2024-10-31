@@ -17,7 +17,7 @@ class CalculatorProvider extends ChangeNotifier {
         var num = int.tryParse(str);
         if(num != null){compController.text = "${(num * -1)}";}
         break;
-      case "X":
+      case "x":
         compController.text += "*";
         break;
       case "÷":
@@ -35,8 +35,6 @@ class CalculatorProvider extends ChangeNotifier {
 
   String compute(String exp) {
     List<String> tokens = splitIntoTokens(exp);
-
-    
 
     for (var token in tokens) {
       if (double.tryParse(token) != null) {
@@ -114,7 +112,7 @@ class CalculatorProvider extends ChangeNotifier {
   List<String> splitIntoTokens(String expression) {
 
     // Regular expression to match numbers and operators
-    RegExp regExp = RegExp(r'(\d+(\.\d+)?|\+|\-|\x|\/|%)');
+    RegExp regExp = RegExp(r'(\d+(\.\d+)?|\+|\-|\*|\/|%)');
 
   // Find all matches
     Iterable<Match> matches = regExp.allMatches(expression);

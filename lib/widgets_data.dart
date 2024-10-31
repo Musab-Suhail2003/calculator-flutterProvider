@@ -7,14 +7,17 @@ List<Widget> buttonList = [
   const Button1(
     label: "AC",
     color: Colors.grey,
+    textcolor: Colors.black,
   ),
   const Button1(
     label: "+/-",
     color: Colors.grey,
+    textcolor: Colors.black,
   ),
   const Button1(
     label: "%",
     color: Colors.grey,
+    textcolor: Colors.black,
   ),
   const Button1(
     label: "÷",
@@ -30,7 +33,7 @@ List<Widget> buttonList = [
     label: "9",
   ),
   const Button1(
-    label: "X",
+    label: "x",
     color: Colors.orange,
   ),
   const Button1(

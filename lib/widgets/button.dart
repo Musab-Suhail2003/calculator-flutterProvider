@@ -28,7 +28,7 @@ class Button1 extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-                color: textcolor, fontSize: 32, fontWeight: FontWeight.w600),
+                color: textcolor, fontSize: 38),
           ),
         ),
       ),
