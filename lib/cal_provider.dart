@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CalculatorProvider extends ChangeNotifier {
   final compController = TextEditingController();
@@ -33,7 +34,7 @@ class CalculatorProvider extends ChangeNotifier {
         TextPosition(offset: compController.text.length));
   }
 
-  String compute(String exp) {
+  String compute(String exp){
     List<String> tokens = splitIntoTokens(exp);
 
     for (var token in tokens) {
@@ -49,9 +50,9 @@ class CalculatorProvider extends ChangeNotifier {
           String op = operators.removeLast();
           numbers.add(_applyOperator(left, right, op));
           if(kDebugMode) {
-            debugPrint('${right}');
-            debugPrint('${left}');
-            debugPrint('${op}');
+            debugPrint('$right');
+            debugPrint('$left');
+            debugPrint(op);
           }
         }
 
@@ -106,6 +107,8 @@ class CalculatorProvider extends ChangeNotifier {
   }
 
   void errorShake(){
+    HapticFeedback.vibrate();
+    debugPrint('shaking');
     compController.clear();
   }
 
